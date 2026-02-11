@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Plate Scanner</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Number Plate <span class="highlight">Scanner</span></h1>
+        <p class="subtitle">Upload an image to detect the vehicle number and state.</p>
+
+        <div class="content-wrapper">
+            <div class="upload-side">
+                <div class="upload-section">
+                    <input type="file" id="imageInput" accept="image/*" hidden>
+                    <label for="imageInput" class="upload-box" id="uploadBox">
+                        <div class="icon">📷</div>
+                        <p>Click or Drag to Upload Image</p>
+                    </label>
+                </div>
+            </div>
+
+            <div class="preview-side">
+                <div id="previewSection" class="hidden">
+                    <img id="imagePreview" src="" alt="Uploaded Image">
+                </div>
+                <button id="scanButton" class="btn hidden">Scan Plate</button>
+            </div>
+
+            <div class="result-side">
+                <div id="loader" class="loader hidden"></div>
+
+                <div id="resultSection" class="hidden">
+                    <div class="result-card">
+                        <h3>Detected Number</h3>
+                        <div class="plate-number" id="plateNumber">Loading...</div>
+                        <p class="state-info" id="stateInfo">State: ...</p>
+                    </div>
+                    <div class="error-message hidden" id="errorMessage"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+
+</html>
