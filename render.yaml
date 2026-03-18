@@ -2,9 +2,13 @@ services:
   - type: web
     name: number-plate-detector
     env: python
+    runtime: python3.11
     pythonVersion: 3.11
     plan: free
     region: oregon
     buildCommand: CARGO_HOME=/tmp/cargo pip install -r requirements.txt
     startCommand: gunicorn app:app
     healthCheckPath: /
+    envVars:
+      - key: CARGO_HOME
+        value: /tmp/cargo
